@@ -148,10 +148,12 @@
   <ItemGroup>
     <ClInclude Include="DllMain.h" />
     <ClInclude Include="ErrorCodes.h" />
+    <ClInclude Include="SearchingAlgorithms.h" />
     <ClInclude Include="SortingAlgorithms.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="SearchingAlgorithms.cpp" />
     <ClCompile Include="SortingAlgorithms.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -14,6 +14,7 @@ int main(int argc, char** argv)
 		printf("\n***************WELCOME TO TEST MODULE*******************\n");
 		printf("Menu:\n");
 		printf("1. Sorting Algorihms\n");
+		printf("2. Searching Algorithms\n");
 		printf("0. Exit\n");
 		printf("Please enter your choice\n");
 		printf("\n********************************************************\n");
@@ -27,6 +28,10 @@ int main(int argc, char** argv)
 				TestSortingFunctions();
 				break;
 			}
+			case 2:
+			{
+				TestSearchingFunctions();
+			}
 			case 0:
 			{
 				printf("Exiting the program. Thank you!!!!\n");
@@ -35,6 +40,132 @@ int main(int argc, char** argv)
 			default:
 			{
 				printf("Invalid option. Please enter a valid option\n");
+				break;
+			}
+		}
+	}
+
+	return nReturnValue;
+}
+
+int TestSearchingFunctions()
+{
+	int nReturnValue = 0;
+	int nChoice = -1;
+	int nKey = -1;
+	int nSize = 0;
+	int* pIntArray = 0;
+
+	while (nChoice != 0)
+	{
+		printf("\n****************************SORTING TESTING MODULE************************************\n");
+		printf("Menu:\n");
+		printf("1. Linear Search\n");
+		printf("0. Exit\n");
+		printf("\n**************************************************************************************\n");
+
+		scanf_s("%d", &nChoice);
+
+		switch (nChoice)
+		{
+			case 0:
+			{
+				printf("Exiting Searching module\n");
+				break;
+			}
+			case 1:
+			{
+				nSize = 0;
+				printf("\n\nLINEAR SEARCH TESTING:\n\n");
+				while (nSize <= 0)
+				{
+					printf("Enter the length of array\n");
+					scanf_s("%d", &nSize);
+
+				}
+
+				pIntArray = (int*)malloc(nSize*sizeof(int));
+				if (pIntArray == 0)
+				{
+					printf("ERROR::Memory could not be allocated to the array. Cannot proceed further\n");
+				}
+				else
+				{
+					printf("Please enter the integers to be stored in array. SIZE = %d\n", nSize);
+					for (int i = 0; i < nSize; i++)
+					{
+						scanf_s("%d", &pIntArray[i]);
+					}
+
+					printf("Done adding to array. Redisplaying to confirm\n");
+					for (int i = 0; i < nSize; i++)
+						printf("%d\n", pIntArray[i]);
+
+					printf("\nPlease enter the key which needs to be searched in array\n");
+					scanf_s("%d", &nKey);
+
+					printf("\nRedisplaying the key to confirm\n%d\n", nKey);
+
+					printf("\n------------------------------------------------------------------------------\n");
+
+					HMODULE hLibMod = LoadLibrary(L"LibAlgorithms.dll");
+					if (0 == hLibMod)
+					{
+						printf("\nERROR:: COULD NOT LOAD LIBRARY LibAlgorithms.dll\n");
+
+						free(pIntArray);
+					}
+					else
+					{
+						GeneralSearchFunc LinearSearch = 0;
+
+						LinearSearch = (GeneralSearchFunc)GetProcAddress(hLibMod, "LinearSearchIntegers");
+
+						if (0 == LinearSearch)
+						{
+							printf("ERROR::Could Not get the address of the fuction LinearSearchIntegers\n");
+
+							FreeLibrary(hLibMod);
+							hLibMod = 0;
+
+							free(pIntArray);
+
+						}
+						else
+						{
+							nReturnValue = LinearSearch(pIntArray, nSize, nKey);
+							if (nReturnValue < -1)
+							{
+								printf("\nERROR occured during searching. Returned Value is %d\n", nReturnValue);
+								FreeLibrary(hLibMod);
+								free(pIntArray);
+							}
+							else
+							{
+
+								printf("\nFound at index %d. Array:\n", nReturnValue);
+								for (int i = 0; i < nSize; i++)
+									printf("%d\n", pIntArray[i]);
+
+								printf("\nFound at index %d.\n", nReturnValue);
+
+								printf("\n----------------------------------------------------------------------\n");
+
+								nReturnValue = 0;
+
+								FreeLibrary(hLibMod);
+								free(pIntArray);
+							}
+						}
+					}
+
+
+				}
+				break;
+			}
+			default:
+			{
+				printf("\n\nInvalid option selected. Please select a valid option\n");
 				break;
 			}
 		}

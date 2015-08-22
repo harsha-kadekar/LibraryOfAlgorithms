@@ -24,12 +24,18 @@
     <ClInclude Include="ErrorCodes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SearchingAlgorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SortingAlgorithms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchingAlgorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,0 +1,19 @@
+﻿Build started 8/21/2015 7:00:53 PM.
+     1>Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _WINDOWS /D _USRDLL /D LIBALGORITHMS_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt SortingAlgorithms.cpp
+         SortingAlgorithms.cpp
+     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(18): warning C4273: 'InsertionSortIntegers': inconsistent dll linkage
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(13): note: see previous definition of 'InsertionSortIntegers'
+     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(98): warning C4273: 'MergeSortIntegers': inconsistent dll linkage
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(14): note: see previous definition of 'MergeSortIntegers'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.lib" /MACHINE:X64 /DLL x64\Debug\DllMain.obj
+         x64\Debug\SearchingAlgorithms.obj
+         x64\Debug\SortingAlgorithms.obj
+         LibAlgorithms.vcxproj -> C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.dll
+     1>Done Building Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.30
