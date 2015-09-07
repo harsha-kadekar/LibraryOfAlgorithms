@@ -12,6 +12,8 @@ extern "C" {
 
 	_declspec(dllimport) int InsertionSortIntegers(int* arNumbers, int nSize);
 	_declspec(dllimport) int MergeSortIntegers(int* pIntArray, int nSize);
+	_declspec(dllimport) int SelectionSortIntegers(int* pIntArray, int nSize);
+	_declspec(dllimport) int BubbleSortIntegers(int* pIntArray, int nSize);
 
 #ifdef __cplusplus
 }

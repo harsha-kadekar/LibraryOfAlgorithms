@@ -148,11 +148,13 @@
   <ItemGroup>
     <ClInclude Include="DllMain.h" />
     <ClInclude Include="ErrorCodes.h" />
+    <ClInclude Include="GeneralAlgorithms.h" />
     <ClInclude Include="SearchingAlgorithms.h" />
     <ClInclude Include="SortingAlgorithms.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="GeneralAlgorithms.cpp" />
     <ClCompile Include="SearchingAlgorithms.cpp" />
     <ClCompile Include="SortingAlgorithms.cpp" />
   </ItemGroup>

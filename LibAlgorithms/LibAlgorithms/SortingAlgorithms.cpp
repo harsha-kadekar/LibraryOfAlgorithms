@@ -198,3 +198,92 @@ int MergeArray(int *pIntArray, int nStart, int nSize)
 
 	return nReturnValue;
 }
+
+/*
+Name:	SelectionSortIntegers
+Description:	This function sorts the given integer array using Selection Sort
+Parameters:	pIntArray -> Integer Array which needs to be sorted
+			nSize -> Size of the integer array
+ReturnValue:	0 for success, else error codes. Also sorted array will be present in pIntArray.
+*/
+int SelectionSortIntegers(int* pIntArray, int nSize)
+{
+	int nReturnValue = 0;
+	int nSmallestIndex = 0;
+	int nTemp = 0;
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	//Find the smallest number's index and swap it with ith element.
+	for (int i = 0; i < nSize; i++)
+	{
+		nSmallestIndex = i;
+		for (int j = i + 1; j < nSize; j++)
+		{
+			if (pIntArray[nSmallestIndex] > pIntArray[j])
+				nSmallestIndex = j;
+		}
+
+		if (nSmallestIndex != i)
+		{
+			nTemp = pIntArray[i];
+			pIntArray[i] = pIntArray[nSmallestIndex];
+			pIntArray[nSmallestIndex] = nTemp;
+		}
+	}
+
+	return nReturnValue;
+}
+
+/*
+Name:	BubbleSortIntegers
+Description:	This function will sort the given integer array in increasing order based on Bubble sort agorithm
+Parameters:	pIntArray -> This is the integer array which needs to be sorted.
+			nSize -> This the size of the array
+ReturnValue: 0 for success else error codes. Sorted array will be present in the pIntArray.
+*/
+int BubbleSortIntegers(int* pIntArray, int nSize)
+{
+	int nReturnValue = 0;
+	int nTemp = -1;
+	bool bNeverEntered = true;
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	//Bubbling out the largest number to the end of array
+	for (int i = 0; i < nSize; i++)
+	{
+		for (int j = 1; j < nSize-i; j++)
+		{
+			if (pIntArray[j] < pIntArray[j - 1])
+			{
+				bNeverEntered = false;
+				nTemp = pIntArray[j];
+				pIntArray[j] = pIntArray[j - 1];
+				pIntArray[j - 1] = nTemp;
+			}
+		}
+
+		//The array is already sorted.
+		if (bNeverEntered)
+			break;
+	}
+
+	return nReturnValue;
+}
