@@ -15,5 +15,6 @@ typedef int(*GeneralSortFunc)(int*, int);
 typedef int(*GeneralSearchFunc)(int*, int, int);
 typedef int(*MatrixMultiplicationBasic)(int**, int, int, int**, int , int, int**);
 typedef int(*MatrixMultiplicationStrassen)(int** , int** , int , int** );
+typedef int (*FindMaximumSubArray)(int* , int , int* , int* , int* );
 
 #endif

@@ -853,7 +853,8 @@ int TestGeneralAlgorithms()
 		printf("4. Strassens Matrix Multiplication Algorithm\n");
 		printf("5. Random Strassen and Basic Matrix multiplication testing\n");
 		printf("6. Generate Random numbers\n");
-		printf("7. Test whether matrix multiplication works!!!!\n");
+		printf("7. Find Sub Array having maximum Sum brute force method\n");
+		printf("8. Find Sub Array having maximum sum linear and non recursive\n");
 		printf("0. Exit\n");
 		printf("\n**************************************************************************************\n");
 
@@ -1081,6 +1082,92 @@ int TestGeneralAlgorithms()
 		}
 		case 2:
 		{
+			nSize = 0;
+			printf("\nTesting finding maximum sub array divide and conqueror\n");
+			while (nSize <= 0)
+			{
+				printf("\nEnter the size of array\n");
+				scanf_s("%d", &nSize);
+			}
+
+			pIntArray = (int*)malloc(sizeof(int)*nSize);
+			if (pIntArray == 0)
+			{
+				printf("\nError:: dynamic memory could not be allocated\n");
+
+			}
+			else
+			{
+				printf("\nEnter the elements of array:(%d)\n", nSize);
+
+				for (int i = 0; i < nSize; i++)
+				{
+					scanf_s("%d", &pIntArray[i]);
+				}
+
+				int *pLow = 0, *pHigh = 0, *pSum = 0;
+
+				pLow = (int*)malloc(sizeof(int) * 1);
+				if (pLow == 0)
+				{
+					//Error handle it
+				}
+
+				pHigh = (int*)malloc(sizeof(int));
+				if (pHigh == 0)
+				{
+					//Error handle it
+				}
+
+				pSum = (int*)malloc(sizeof(int));
+				if (pSum == 0)
+				{
+					//Error handle it
+				}
+
+				FindMaximumSubArray maxSubArray = 0;
+
+				HMODULE hLibMod = 0;
+
+				hLibMod = LoadLibrary(L"LibAlgorithms.dll");
+				if (hLibMod == 0)
+				{
+					//Error handle it
+				}
+
+				maxSubArray = (FindMaximumSubArray)GetProcAddress(hLibMod, "FindMaximumSubArray");
+				if (maxSubArray == 0)
+				{
+					//Error handle it
+				}
+
+				nReturnValue = maxSubArray(pIntArray, nSize, pLow, pHigh, pSum);
+				if (nReturnValue != 0)
+				{
+					//Error handle it
+					printf("\nError %d\n", nReturnValue);
+				}
+				else
+				{
+					printf("\nMax Sub Array found from %d to %d with sum as %d\n", *pLow, *pHigh, *pSum);
+				}
+
+				free(pIntArray);
+				pIntArray = 0;
+
+				free(pLow);
+				pLow = 0;
+
+				free(pHigh);
+				pHigh = 0;
+
+				free(pSum);
+				pSum = 0;
+
+				FreeLibrary(hLibMod);
+				hLibMod = 0;
+
+			}
 			break;
 		}
 		case 3:
@@ -1557,14 +1644,188 @@ int TestGeneralAlgorithms()
 		case 7:
 		{
 			nSize = 0;
-			printf("\nTesting the equality of different approches for matrix multiplication\n");
-			while (nSize < 0)
+			printf("\nTesting finding maximum sub array brute force\n");
+			while (nSize <= 0)
 			{
-				printf("\nEnter the number size of matrix\n");
+				printf("\nEnter the size of array\n");
 				scanf_s("%d", &nSize);
 			}
 
+			pIntArray = (int*)malloc(sizeof(int)*nSize);
+			if (pIntArray == 0)
+			{
+				printf("\nError:: dynamic memory could not be allocated\n");
 
+			}
+			else
+			{
+				printf("\nEnter the elements of array:(%d)\n", nSize);
+
+				for (int i = 0; i < nSize; i++)
+				{
+					scanf_s("%d", &pIntArray[i]);
+				}
+
+				int *pLow = 0, *pHigh = 0, *pSum = 0;
+
+				pLow = (int*)malloc(sizeof(int) * 1);
+				if (pLow == 0)
+				{
+					//Error handle it
+				}
+
+				pHigh = (int*)malloc(sizeof(int));
+				if (pHigh == 0)
+				{
+					//Error handle it
+				}
+
+				pSum = (int*)malloc(sizeof(int));
+				if (pSum == 0)
+				{
+					//Error handle it
+				}
+
+				FindMaximumSubArray maxSubArray = 0;
+
+				HMODULE hLibMod = 0;
+
+				hLibMod = LoadLibrary(L"LibAlgorithms.dll");
+				if (hLibMod == 0)
+				{
+					//Error handle it
+				}
+
+				maxSubArray = (FindMaximumSubArray)GetProcAddress(hLibMod, "FindMaxSubArrayBruteForce");
+				if (maxSubArray == 0)
+				{
+					//Error handle it
+				}
+				
+				nReturnValue = maxSubArray(pIntArray, nSize, pLow, pHigh, pSum);
+				if (nReturnValue != 0)
+				{
+					//Error handle it
+				}
+				else
+				{
+					printf("\nMax Sub Array found from %d to %d with sum as %d\n", *pLow, *pHigh, *pSum);
+				}
+
+				free(pIntArray);
+				pIntArray = 0;
+
+				free(pLow);
+				pLow = 0;
+
+				free(pHigh);
+				pHigh = 0;
+
+				free(pSum);
+				pSum = 0;
+
+				FreeLibrary(hLibMod);
+				hLibMod = 0;
+
+			}
+			
+			break;
+
+
+		}
+		case 8:
+		{
+			nSize = 0;
+			printf("\nTesting finding maximum sub array linear time and non recursive\n");
+			while (nSize <= 0)
+			{
+				printf("\nEnter the size of array\n");
+				scanf_s("%d", &nSize);
+			}
+
+			pIntArray = (int*)malloc(sizeof(int)*nSize);
+			if (pIntArray == 0)
+			{
+				printf("\nError:: dynamic memory could not be allocated\n");
+
+			}
+			else
+			{
+				printf("\nEnter the elements of array:(%d)\n", nSize);
+
+				for (int i = 0; i < nSize; i++)
+				{
+					scanf_s("%d", &pIntArray[i]);
+				}
+
+				int *pLow = 0, *pHigh = 0, *pSum = 0;
+
+				pLow = (int*)malloc(sizeof(int) * 1);
+				if (pLow == 0)
+				{
+					//Error handle it
+				}
+
+				pHigh = (int*)malloc(sizeof(int));
+				if (pHigh == 0)
+				{
+					//Error handle it
+				}
+
+				pSum = (int*)malloc(sizeof(int));
+				if (pSum == 0)
+				{
+					//Error handle it
+				}
+
+				FindMaximumSubArray maxSubArray = 0;
+
+				HMODULE hLibMod = 0;
+
+				hLibMod = LoadLibrary(L"LibAlgorithms.dll");
+				if (hLibMod == 0)
+				{
+					//Error handle it
+				}
+
+				maxSubArray = (FindMaximumSubArray)GetProcAddress(hLibMod, "FindMaxSubArrayLinear");
+				if (maxSubArray == 0)
+				{
+					//Error handle it
+				}
+
+				printf("\nHook up\n");
+				Sleep(30000);
+				
+
+				nReturnValue = maxSubArray(pIntArray, nSize, pLow, pHigh, pSum);
+				if (nReturnValue != 0)
+				{
+					//Error handle it
+				}
+				else
+				{
+					printf("\nMax Sub Array found from %d to %d with sum as %d\n", *pLow, *pHigh, *pSum);
+				}
+
+				free(pIntArray);
+				pIntArray = 0;
+
+				free(pLow);
+				pLow = 0;
+
+				free(pHigh);
+				pHigh = 0;
+
+				free(pSum);
+				pSum = 0;
+
+				FreeLibrary(hLibMod);
+				hLibMod = 0;
+
+			}
+
+			break;
 		}
 		default:
 		{

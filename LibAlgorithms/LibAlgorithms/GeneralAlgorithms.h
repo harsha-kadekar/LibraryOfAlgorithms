@@ -13,7 +13,8 @@ extern "C" {
 	_declspec(dllimport) int FindMaximumSubArray(int* pIntArray, int nSize, int* plow, int* phigh, int* psum);
 	_declspec(dllimport) int MatrixMultiplicationBasic(int** pMatrixA, int Am, int An, int** pMatrixB, int Bm, int Bn, int** pMatrixC);
 	_declspec(dllimport) int MatrixMultiplicationStrassen(int** pMatrixA, int** pMatrixB, int nSize, int** pMatrixC);
-	_declspec(dllimport) int FindMaxSubArrayBruteForce(int* pIntArray, int nSize, int nlow, int nhigh, int* pLowRes, int* pHighRes, int *pSumRes);
+	_declspec(dllimport) int FindMaxSubArrayBruteForce(int* pIntArray, int nSize, int* pLowRes, int* pHighRes, int *pSumRes);
+	_declspec(dllimport) int FindMaxSubArrayLinear(int* pIntArray, int nSize, int *pLow, int*pHigh, int* pSum);
 
 #ifdef __cplusplus
 }

@@ -287,3 +287,253 @@ int BubbleSortIntegers(int* pIntArray, int nSize)
 
 	return nReturnValue;
 }
+
+/*
+Name: MaxHeapify
+Description: This function will heapify the given array. It is following rule that always parent has highest value.
+Parameters: pIntArray -> Array which needs to be heapified
+			nSize -> Size of the array
+			nIndex -> Index of array from where below subtree needs to be heapified.
+ReturnValue: 0 for success else error codes
+*/
+int MaxHeapify(int* pIntArray, int nSize, int nIndex)
+{
+	int nReturnValue = 0;
+	int nLeftIndex = LeftChildHeap(nIndex);
+	int nRightIndex = RightChildHeap(nIndex);
+	int nLargestIndex = nIndex;
+	int nTemp = 0;
+
+	if (nLeftIndex < nSize && pIntArray[nLeftIndex] > pIntArray[nLargestIndex])
+	{
+		nLargestIndex = nLeftIndex;
+	}
+
+	if (nRightIndex < nSize && pIntArray[nRightIndex] > pIntArray[nLargestIndex])
+	{
+		nLargestIndex = nRightIndex;
+	}
+
+	if (nLargestIndex != nIndex)
+	{
+		nTemp = pIntArray[nLargestIndex];
+		pIntArray[nLargestIndex] = pIntArray[nIndex];
+		pIntArray[nIndex] = nTemp;
+
+		MaxHeapify(pIntArray, nSize, nLargestIndex);
+	}
+
+	return nReturnValue;
+}
+
+/*
+Name: LeftChildHeap
+Description: This function will get you the index of left child for the node pointed by i
+Parameters: index -> index of the node whose left child's index needs to be found.
+ReturnValue:	index of the left child
+*/
+int LeftChildHeap(int index)
+{
+	return 2 * index + 1;
+}
+
+
+/*
+Name: RightChildHeap
+Description: This function will get you the index of right child for the node pointed by i
+Parameter: index -> index of the node whose right child needs to be found
+ReturnValue: index of the right child
+*/
+int RightChildHeap(int index)
+{
+	return 2 * index + 2;
+}
+
+/*
+Name: ParentHeap
+Description: This function will get you the index of the parent if you give the index of child
+Parameter: index -> index of the node whose parent needs to be found
+ReturnValue: index of the parent
+*/
+int ParentHeap(int index)
+{
+	return index / 2;
+}
+
+/*
+Name: BuildMaxHeap
+Description: Given an array of integers it will be coverted to a heap array
+Parameter: pIntArray -> array of integers
+		   nSize -> Size of the array
+ReturnValue: 0 for success else a -ve error code.
+*/
+int BuildMaxHeap(int* pIntArray, int nSize)
+{
+	int nReturnValue = 0;
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	//Heapify will happen from the bottom up that is we start from leaves. Now leaves in a heap appear
+	//only after nSize/2 index.
+	for (int i = nSize / 2; i >= 0; i--)
+	{
+		MaxHeapify(pIntArray, nSize, i);
+	}
+
+
+	return nReturnValue;
+}
+
+/*
+Name: HeapSort
+Description: This function sorts a given array in ascending order using heap sort
+Parameter: pIntArray -> This is the array which needs to be sorted
+		   nSize -> Size of the array
+ReturnValue: 0 for success else ERROR codes
+*/
+int HeapSortIntegers(int* pIntArray, int nSize)
+{
+	int nReturnValue = 0;
+	int nTemp = 0;
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	BuildMaxHeap(pIntArray, nSize);
+
+	for (int i = nSize - 1, j = 1; i >= 1; i++, j++)
+	{
+		nTemp = pIntArray[0];
+		pIntArray[0] = pIntArray[i];
+		pIntArray[i] = nTemp;
+
+		MaxHeapify(pIntArray, nSize - j, 0);
+
+	}
+
+	return nReturnValue;
+}
+
+/*
+Name: QuickSortIntegers
+Description: This function will sort an array using quicksort logic
+Parameters: pIntArray -> array whose elements needs to be sorted
+			nSize -> Size of the array
+ReturnValue: 0 for success else error codes
+*/
+int QuickSortIntegers(int* pIntArray, int nSize)
+{
+	int nReturnValue = 0;
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	nReturnValue = RandomizedQuickSort(pIntArray, 0, nSize - 1);
+
+	return nReturnValue;
+}
+
+/*
+Name: RandomizedQuickSort
+Description: This function will do actual quicksort. It uses randomization to fasten quick sort
+Parameters: pIntArray -> Array which needs to be sorted
+			nlow -> Low index of array from where it should be sorted
+			nhigh -> high index of array till where it sould be sorted
+ReturnValue: 0 for success else error codes
+*/
+int RandomizedQuickSort(int* pIntArray, int nlow, int nhigh)
+{
+	int nReturnValue = 0;
+	int nKey = -1;
+
+	if (nlow < nhigh)
+	{
+		nKey = RandomizedPartition(pIntArray, nlow, nhigh);
+		RandomizedQuickSort(pIntArray, nlow, nKey - 1);
+		RandomizedQuickSort(pIntArray, nKey + 1, nhigh);
+	}
+
+	return nReturnValue;
+}
+
+/*
+Name: RandomizedPartion
+Description: This function will apply randomization and then calls partition whose work is to divide
+Parameters: pIntArray -> array to be sorted
+			nlow -> start index of array
+			nhigh -> end index of array
+ReturnValue: Returns the pivot index where partion has been done.
+*/
+int RandomizedPartition(int* pIntArray, int nlow, int nhigh)
+{
+	int nReturnValue = 0;
+	
+	int nDiff = nhigh - nlow;
+	int nTemp = 0;
+
+	srand(time(0));
+
+	nDiff = rand() % nDiff;
+
+	nTemp = pIntArray[nhigh];
+	pIntArray[nhigh] = pIntArray[nlow + nDiff];
+	pIntArray[nlow + nDiff] = nTemp;
+
+	nReturnValue = PartitionQuickSort(pIntArray, nlow, nhigh);
+
+	return nReturnValue;
+}
+
+/*
+Name: PartitionQuickSort
+Description: This function will get the pivot element where divid of array take place
+Parameters: pIntArray -> array in which pivot element needs to be found
+			nlow -> lowest index of the array
+			nhigh -> highest index of the array
+ReturnValue: pivot element index
+*/
+int PartitionQuickSort(int* pIntArray, int nlow, int nhigh)
+{
+	int nCompareElement = pIntArray[nhigh];
+	int nTemp = 0;
+	int i = nlow - 1;
+
+	for (int j = nlow; i < nhigh; j++)
+	{
+		if (pIntArray[j] <= nCompareElement)
+		{
+			i++;
+			nTemp = pIntArray[i];
+			pIntArray[i] = pIntArray[j];
+			pIntArray[j] = pIntArray[i];
+		}
+	}
+
+	nTemp = pIntArray[i + 1];
+	pIntArray[i + 1] = pIntArray[nhigh];
+	pIntArray[nhigh] = nTemp;
+
+	return i + 1;
+}

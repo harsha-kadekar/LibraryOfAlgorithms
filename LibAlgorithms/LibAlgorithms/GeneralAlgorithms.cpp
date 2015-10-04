@@ -104,7 +104,7 @@ int FindMaximumSubArray(int* pIntArray, int nSize, int* plow, int* phigh, int* p
 {
 	int nReturnValue = 0;
 
-	plow = 0, phigh = 0, psum = 0;
+	//plow = 0, phigh = 0, psum = 0;
 
 	if (nSize <= 0)
 		return ERR_INVALIDARRAYSIZE;
@@ -165,6 +165,79 @@ int FindMaximumSubArray(int* pIntArray, int nSize, int* plow, int* phigh, int* p
 }
 
 /*
+Name: FindMaxSubArrayLinear
+Description: FInd the maximum Sub array in a such a way that it should be non recursive and linear.
+Parameter: pIntArray - Array in which we need to find the maximum sub array
+		   nSize - Size of the array
+		   pLow - Start index of sub array
+		   pHigh - End index of sub array
+		   pSum - Sum of the sub array 
+ReturnValue: 0 for success else Error codes.
+*/
+int FindMaxSubArrayLinear(int* pIntArray, int nSize, int *pLow, int*pHigh, int* pSum)
+{
+	int nReturnValue = 0;
+	bool bResetCurrentValue = false;
+	int nCurrentSum = 0;
+	int nTempSum = 0;
+	int nResetStart = 0;
+
+
+	if (pIntArray == 0)
+	{
+		return ERR_NULLINPUTARRAY;
+	}
+
+	if (nSize <= 0)
+	{
+		return ERR_INVALIDARRAYSIZE;
+	}
+
+	if (pLow == 0 || pHigh == 0 || pSum == 0)
+	{
+		return ERR_INVALIDINPUT;
+	}
+
+	nCurrentSum = *pSum = pIntArray[0];
+
+	*pLow = *pHigh = 0;
+
+	for (int i = 1; i < nSize; i++)
+	{
+		nTempSum = nCurrentSum + pIntArray[i];
+		if (nTempSum > 0)
+		{
+			nCurrentSum = nTempSum;
+
+			if (nCurrentSum > 0 && bResetCurrentValue)
+			{
+				nResetStart = i;
+				bResetCurrentValue = false;
+			}
+
+			if (nCurrentSum > *pSum)
+			{
+				*pSum = nCurrentSum;
+				*pHigh = i;
+				*pLow = nResetStart;
+				
+			}
+
+
+
+			
+		}
+		else
+		{
+			nCurrentSum = 0;
+			bResetCurrentValue = true;
+		}
+	}
+
+	return nReturnValue;
+}
+
+/*
 Name: FindMaxSubArrayBruteForce
 Description: This will find the sub array in pIntArray such that the subarrays sum is maximum among other possible sub arrays
 Parameter: pIntArray -> This is the array in which we need to find the maximum sub array
@@ -175,7 +248,7 @@ Parameter: pIntArray -> This is the array in which we need to find the maximum s
 		   pSumRes -> sum of the sub array
 ReturnValue: 0 for success else Error codes
 */
-int FindMaxSubArrayBruteForce(int* pIntArray,int nSize, int nlow, int nhigh, int* pLowRes, int* pHighRes, int *pSumRes)
+int FindMaxSubArrayBruteForce(int* pIntArray,int nSize, int* pLowRes, int* pHighRes, int *pSumRes)
 {
 	int nReturnValue = 0;
 	int nTempSum = 0;

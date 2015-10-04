@@ -1,35 +1,21 @@
-﻿Build started 9/7/2015 1:08:19 AM.
-     1>Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 9/24/2015 3:45:56 AM.
+     1>Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D CODE_ANALYSIS /D _DEBUG /D _WINDOWS /D _USRDLL /D LIBALGORITHMS_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet DllMain.cpp GeneralAlgorithms.cpp SearchingAlgorithms.cpp SortingAlgorithms.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _WINDOWS /D _USRDLL /D LIBALGORITHMS_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt SortingAlgorithms.cpp
          SortingAlgorithms.cpp
      1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(18): warning C4273: 'InsertionSortIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(13): note: see previous definition of 'InsertionSortIntegers'
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(22): note: see previous definition of 'InsertionSortIntegers'
      1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(98): warning C4273: 'MergeSortIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(14): note: see previous definition of 'MergeSortIntegers'
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(23): note: see previous definition of 'MergeSortIntegers'
      1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(210): warning C4273: 'SelectionSortIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(15): note: see previous definition of 'SelectionSortIntegers'
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(24): note: see previous definition of 'SelectionSortIntegers'
      1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(254): warning C4273: 'BubbleSortIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(16): note: see previous definition of 'BubbleSortIntegers'
-         SearchingAlgorithms.cpp
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\searchingalgorithms.cpp(16): warning C4273: 'LinearSearchIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\searchingalgorithms.h(10): note: see previous definition of 'LinearSearchIntegers'
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\searchingalgorithms.cpp(50): warning C4273: 'BinarySearchIntegers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\searchingalgorithms.h(11): note: see previous definition of 'BinarySearchIntegers'
-         GeneralAlgorithms.cpp
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(17): warning C4273: 'AddingTwoBinaryNumbers': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.h(12): note: see previous definition of 'AddingTwoBinaryNumbers'
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(104): warning C4273: 'FindMaximumSubArray': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.h(13): note: see previous definition of 'FindMaximumSubArray'
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(179): warning C4273: 'FindMaxSubArrayBruteForce': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.h(16): note: see previous definition of 'FindMaxSubArrayBruteForce'
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(361): warning C4273: 'MatrixMultiplicationBasic': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.h(14): note: see previous definition of 'MatrixMultiplicationBasic'
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(406): warning C4273: 'MatrixMultiplicationStrassen': inconsistent dll linkage
-         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.h(15): note: see previous definition of 'MatrixMultiplicationStrassen'
-         DllMain.cpp
-         Running Code Analysis for C/C++...
-         Generating Code...
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(25): note: see previous definition of 'BubbleSortIntegers'
+     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(403): warning C4273: 'HeapSortIntegers': inconsistent dll linkage
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(26): note: see previous definition of 'HeapSortIntegers'
+     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(440): warning C4273: 'QuickSortIntegers': inconsistent dll linkage
+         c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.h(27): note: see previous definition of 'QuickSortIntegers'
+     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(496): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.lib" /MACHINE:X64 /DLL x64\Debug\DllMain.obj
          x64\Debug\GeneralAlgorithms.obj
@@ -37,12 +23,8 @@
          x64\Debug\SortingAlgorithms.obj
             Creating library C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.lib and object C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.exp
          LibAlgorithms.vcxproj -> C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\x64\Debug\LibAlgorithms.dll
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(1015): warning C6385: Reading invalid data from 'pP4':  the readable size is 'sizeof(int *)*nSize/2' bytes, but '16' bytes may be read.
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\generalalgorithms.cpp(1024): warning C6385: Reading invalid data from 'pP5':  the readable size is 'sizeof(int *)*nSize/2' bytes, but '16' bytes may be read.
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(188): warning C6386: Buffer overrun while writing to 'pTempArray':  the writable size is 'nSize*sizeof(int)' bytes, but '8' bytes might be written.
-     1>c:\d_drive\coding\libraryofalgorithms\libalgorithms\libalgorithms\sortingalgorithms.cpp(193): warning C6385: Reading invalid data from 'pTempArray':  the readable size is 'nSize*sizeof(int)' bytes, but '8' bytes may be read.
-     1>Done Building Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\D_Drive\Coding\LibraryOfAlgorithms\LibAlgorithms\LibAlgorithms\LibAlgorithms.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.17
+Time Elapsed 00:00:01.34

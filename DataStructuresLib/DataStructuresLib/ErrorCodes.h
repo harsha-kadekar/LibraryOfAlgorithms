@@ -1,0 +1,8 @@
+#ifndef ERRORCODES_H
+#define ERRORCODES_H
+
+const int ERR_MEMORYALLOCATIONFAILED = - 2;
+const int ERR_INVALIDPOINTERREFERENCE = -3;
+const int ERR_LISTISEMPTY = -999;
+
+#endif 
