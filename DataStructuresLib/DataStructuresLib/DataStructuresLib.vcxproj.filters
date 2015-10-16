@@ -18,12 +18,18 @@
     <ClCompile Include="CSinglyList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneralFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSinglyList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ErrorCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralFunctionHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

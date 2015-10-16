@@ -6,16 +6,19 @@
 
 using namespace std;
 
+typedef struct structNode
+{
+	int nData;
+	struct structNode* pNext;
+}Node;
+
 class CSinglyList
 {
 private:
 	int nLength;
-	struct Node
-	{
-		int nData;
-		struct Node* pNext;
-	}*pHeadPointer,*pCurrent;
+	Node *pHeader, *pCurrent;
 protected:
+	Node* GetNodeatPos(int nPos);
 public:
 	CSinglyList();
 	~CSinglyList();
@@ -37,7 +40,7 @@ public:
 
 	int GetFirstElement();
 	int GetLastElement();
-	int GetPositionOfNode(int nItem);
+	int GetPositionOfNode(int n11111Item);
 	int GetCurrentElement();
 
 	int SortList(bool bAscending);
