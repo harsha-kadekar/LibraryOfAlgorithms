@@ -146,11 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CBinarySearchTree.cpp" />
+    <ClCompile Include="COpenAddressDictionary.cpp" />
     <ClCompile Include="CSinglyList.cpp" />
     <ClCompile Include="GeneralFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CBinarySearchTree.h" />
+    <ClInclude Include="CDoublyLinkedListClass.hpp" />
+    <ClInclude Include="COpenAddressDictionary.h" />
+    <ClInclude Include="CQueueClass.hpp" />
     <ClInclude Include="CSinglyList.h" />
+    <ClInclude Include="CStackClass.hpp" />
     <ClInclude Include="ErrorCodes.h" />
     <ClInclude Include="GeneralFunctionHeader.h" />
   </ItemGroup>

@@ -520,7 +520,7 @@ int PartitionQuickSort(int* pIntArray, int nlow, int nhigh)
 	int nTemp = 0;
 	int i = nlow - 1;
 
-	for (int j = nlow; i < nhigh; j++)
+	for (int j = nlow; j < nhigh; j++)
 	{
 		if (pIntArray[j] <= nCompareElement)
 		{
